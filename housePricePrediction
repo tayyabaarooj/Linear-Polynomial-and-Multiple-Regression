@@ -1,0 +1,17 @@
+#using linear Regression
+import matplotlib.pyplot as plt 
+import numpy as np 
+from scipy import stats 
+area = [140,150,160,170,180,190,200] 
+price = [25000,27000,29000,31000,33000,35000,37000] slope, intercept, r_value, p_value, std_err = stats.linregress(x=area,y=price) 
+def myfunc(x): 
+ return slope * x + intercept 
+plt.scatter(x=area, y=price) 
+plt.plot(area, price) 
+plt.title("house pricing prediction") 
+plt.xlabel("house area") 
+plt.ylabel("house price") 
+plt.show() 
+price = myfunc(100) 
+print(price)
+
